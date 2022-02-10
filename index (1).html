@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>twitter</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				height: 100vh; /* vh stands for viewport height | which translates for the height for the entire window*/
+				background-color: #000;
+				display: flex; /* since body is the parent element to the 3 div elements, it is the parent and we have to change it's display from "block" which is the default so we can properly position the child elements */
+			}
+			.left,
+			.right {
+				/* the comma means both these elements will take up the same styling */
+				width: 25%;
+				background: #ff0;
+			}
+			.center {
+				background: #f00; /* red background*/
+				flex-grow: 1; /*Make this element take up all the remaining space*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="left"></div>
+		<div class="center"></div>
+		<div class="right"></div>
+	</body>
+</html>

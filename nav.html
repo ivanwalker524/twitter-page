@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>twitter</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				font-size: 12px;
+				height: 100vh; /* vh stands for viewport height | which translates for the height for the entire window*/
+				background-color: #000;
+				display:flex; /* since body is the parent element to the 3 div elements, it is the parent and we have to change it's display from "block" which is the default so we can properly position the child elements */
+				font-family: sans-serif;
+			}
+			.left,
+			.right {
+				/* the comma means both these elements will take up the same styling */
+				width: 25%;
+				/* background: #ff0; */
+			}
+			.center {
+				/* background: #f00; */ /* red background */
+				flex-grow: 1; /*Make this element take up all the remaining space*/
+			}
+			.left {
+				display: flex;
+				flex-direction:column;
+				border-right: 1px solid #ccc;
+			}
+			nav {
+				flex-grow:1;
+			}
+			.profile_bottom {
+				display: flex;
+				align-items:center;
+				justify-content: center;
+				border-top: 1px solid #ccc;
+				padding: 10px 0;
+			}
+			.profile_bottom > .image {
+				border-radius: 100%;
+				background: #ccc;
+				width: 40px;
+				height: 40px;
+				margin-right: 10px;
+			}
+			.profile_bottom > .name {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+			}
+			.profile_bottom > .name > p:nth-child(1) {
+				font-weight: bold;
+				font-size: 14px;
+				color: #ccc;
+			}
+			.profile_bottom > .name > p:nth-child(2) {
+				color: #ccc;
+			}
+			.logo {
+				width: 40px;
+				margin-left: 20px;
+				margin-top: 20px;
+			}
+			a {
+				text-decoration: none;
+				color: #fff;
+			}
+			nav > a.a {
+				margin-left: 20px;
+				display:flex;
+				font-size: 22px;
+				padding: 10px 0;
+			}
+			nav > a.a .icon {
+				border: 1px dashed #ccc;
+				width: 25px;
+				height: 25px;
+				border-radius: 100%;
+				margin-right: 15px;
+			}
+			a.btn-tweet {
+				background: #1da1f2;
+				border-radius: 100px;
+				font-size: 23px;
+				font-weight: bold;
+				padding: 10px;
+				display: block;
+				text-align: center;
+				margin: 20px;
+			}
+			.right{
+				color: #fff;
+				border: 2px solid rgb(61, 59, 59);
+				height:48%;
+				padding: 10px;
+				font-size: 15px;
+				border-radius: 14px;
+				float: left;
+				display: flex;
+				flex-direction: column;
+		
+				
+			}
+			.heading1{
+				font-size: 1.2rem;
+			}
+			input[type=radio]{
+				display: flex;
+				float:right;
+				margin-right: 10px;
+				width: 1.5em;
+				height: 1.5em;
+	
+				
+			}
+			.link{
+				color: rgb(5, 5, 144);
+				font-weight: bold;
+			}
+			.center{
+				display: flex;
+				border-right: 1px solid#fff;
+				margin: 20px 0;
+			}
+			.back_icon{
+				width: 40px;
+				height: 40px;
+				background-color: #ccc;
+				border-radius: 100%;
+				margin: 0 20px;
+			}
+			.my_search{
+				display: flex;
+				flex-direction: column;
+				
+			}
+			.my_search .search_icon{
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				background-color: #cccccc;
+				position: absolute;
+				background-color: #e4d7d700;
+				
+			}
+			.my_search input{
+				height: 40px;
+				border-radius: 50px;
+				padding: 0 50px;
+				justify-content: center;
+				background-color: transparent;
+				
+			}
+			.option_for_more{
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				background:#ccc;
+				margin: 0 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="left">
+			<nav>
+				<img
+					src="https://www.iconpacks.net/icons/2/free-twitter-logo-icon-2429-thumb.png"
+					class="logo"
+				/>
+				<a class="a" href="#">
+					<div class="icon"></div>
+					<p>Home</p>
+				</a>
+				<a class="a" href="#">
+					<div class="icon"></div>
+					<p>Explore</p>
+				</a>
+				<a href="#" class="btn-tweet">Tweet</a>
+			</nav>
+			<div class="profile_bottom">
+				<div class="image"></div>
+				<div class="name">
+					<p>Mukiibi Peter</p>
+					<p>@ucnpre</p>
+				</div>
+			</div>
+		</div>
+		<div class="center">
+			<div class="back_icon"></div>
+			<div class="my_search">
+				<div class="search_icon"></div>
+				<input type="text" placeholder="search ....">
+			</div>
+			<div class="option_for_more"></div>
+		</div>
+		<div class="right">
+			<h1 class="heading1">Search filters</h1>
+			<br><br>
+			<form action="">
+			<p style="font-weight: bold;">People</p>
+			<br>
+			<label for="anyone">From anyone<input type="radio" id="anyone" checked></label>
+			<br><br>
+			<label for="follow">People you follow <input type="radio" id="follow"></label>
+			<br><br>
+			<p style="font-weight: bold;">Location</p>
+			<br>
+			<label for="anywhere">Anywhere <input type="radio" id="anywhere" checked ></label>
+			<br><br>
+			<label for="nearyou">Near you <input type="radio" id="nearyou"></label>
+			<br><br><br>
+			<a class="link" href="#">Advanced search</a>
+		</form>
+		</div>
+	</body>
+</html>
